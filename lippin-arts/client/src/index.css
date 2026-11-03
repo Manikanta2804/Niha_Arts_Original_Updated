@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-indigo: #6B1E23;
+  --color-rust: #C89B3C;
+  --color-ivory: #FBF3E7;
+  --color-charcoal: #2B1B12;
+  --color-mirror: #E3D5B8;
+  --color-sage: #6B8E4E;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+}
+
+.stitch-divider {
+  border-top: 2px dashed var(--color-mirror);
+}
+
+.motif-border {
+  border-image-slice: 1;
+  border-image-source: repeating-linear-gradient(45deg, var(--color-rust) 0, var(--color-rust) 4px, transparent 4px, transparent 10px);
+  border-width: 3px;
+  border-style: solid;
+}
+
+.motif-divider {
+  height: 8px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-rust) 0px, var(--color-rust) 6px,
+    var(--color-indigo) 6px, var(--color-indigo) 12px
+  );
+  opacity: 0.5;
+}
+
+@keyframes location-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(200, 155, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(200, 155, 60, 0); }
+}
+
+.locating-pulse {
+  animation: location-pulse 1.5s infinite;
+}
